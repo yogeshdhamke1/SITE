@@ -1,0 +1,77 @@
+/* * {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #0b69ed;
+	height: 100vh;
+} */
+.slider-area h2 {
+	/* text-align: center;
+	font-family: impact;
+	font-size: 60px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 100px 0 30px 0;
+	color: #fff; */
+}
+.wrapper {
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	/* border-radius: 180px; */
+	/* padding: 2.5rem;
+	background: #ddd;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+.sub-grid.item4 {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure the container takes full height of the grid cell */
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Ensure the wrapper fills the height of the parent */
+    /* overflow: hidden; */
+}
+
+.wrapper .item {
+  /*   flex: 0 0 auto; Ensure items maintain their natural width */
+    width: 100%; /* Make each item take full width */
+}
+
+.wrapper img {
+    width: 120px;
+    width: 120px;
+    object-fit: cover; /* Ensure images cover the entire area */
+}
+
+.item {
+	animation: animate 25s alternate linear infinite;
+}
+.container:hover .item {
+	animation-play-state: paused;
+}
+@keyframes animate {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-1100px, 0, 0);
+	}
+}
+@media (max-width:767px) {
+	.slider-area h2 {
+		font-size: 30px;
+	}
+	.wrapper {
+		width: 95%;
+		border-radius: 0;
+		padding: 0;
+	}
+}
+

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ortiz-fluid-demo.squarespace</title>
+    <link rel="icon" type="image/x-icon" href="images/default-favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+
+    <style>
+        .footer {
+            background-color: #1a2e1a !important;
+            color: white !important;
+        }
+        body{
+            background-color: #fff5eb;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        span {
+            color: #1a2e1a;
+        }
+
+        .row {
+            margin: 50px 0px;
+        }
+
+        /* style=" padding: 50px 0px; " */
+        .main-content-heading h1 {
+            font-size: 111px !important;
+            font-weight: 500;
+            color: #1a2e1a;
+            /* border: 5px solid; */
+        }
+
+        /* Custom padding class */
+        /* .custom-padding {
+        padding: 50px;
+    } */
+
+        .gilda-display-regular {
+            font-family: "Gilda Display", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .BOOK-ME {
+            position: relative;
+            overflow: hidden;
+            /* color: #000; */
+            /* default text color */
+            background-color: transparent;
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .BOOK-ME::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1a2e1a;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+
+        }
+
+        .BOOK-ME:hover {
+            /* transform: scale(1.1);  Scaling effect */
+            color: white;
+            transform: scaleY(1);
+            border: #1a2e1a !important;
+        }
+
+        .BOOK-ME:hover::before {
+            transform: scaleY(1);
+        }
+
+        .SERVICES-p p {
+            padding: 10px 0px;
+            font-size: 18px;
+            /* border-top: 1px solid; */
+            /* border-bottom: 1px solid; */
+        }
+
+        .READ-MY-STORY-content>p {
+            padding: 40px 0px 90px 0px;
+            font-size: 18px;
+        }
+
+        :root {
+            --marquee-speed: 10s;
+
+        }
+
+        .marquee-text {
+            font-size: 150px;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee var(--marquee-speed) linear infinite;
+            background: #cda1cd;
+        }
+
+
+        .marquee-text:hover {
+            animation-play-state: paused;
+
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+
+            }
+
+            to {
+                transform: translateX(-100%);
+
+            }
+        }
+
+
+        /* Style for the language switch button */
+        .language-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #1a2e1a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .language-btn:hover {
+            background-color: #4c8b4b;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Language Toggle Button -->
+    <!-- <button class="language-btn" id="language-toggle">ES</button> -->
+     <!-- Google Translate Widget -->
+     <div id="google_translate_element" style="position: absolute; top: 20px; right: 20px;"></div>
+     
+<div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 main-content-heading text-center">
+                    <h1 style="white-space: pre-wrap;" class="gilda-display-regular " id="main-title">BRANDI ORTIZ</h1>
+                    <p id="subtitle">NYC PHOTOGRAPHER & ART DIRECTOR</p>
+                </div>
+                <div class="col-md-6 main-content-heading text-center custom-padding">
+                    <!-- <style>
+                        .img-responsive {
+                            animation: growBottomToTop 0.9s forwards ease;
+                            animation-delay: 0s;
+                            transform-origin: bottom;  
+                        }
+                        
+                        @keyframes growBottomToTop {
+                            0% {
+                                transform: scaleY(0);  
+                            }
+                            
+                            100% {
+                                transform: scaleY(1);  
+                            }
+                        }
+                    </style> -->
+                    
+                    <img class="img-responsive" src="images/image-asset.jpeg" alt="Brandi Ortiz">
+                    
+                </div>
+            </div>
+            <hr style="border: none; color: #bbb; background-color: #1a2e1a; height: 1px;">
+        </div>
+    </div>
+    
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p>ABOUT BRANDI</p>
+                </div>
+                <div class="col-md-10"> 
+                   <p style="font-size: 25px; font-weight: 590;" class="gilda-display-regular">Brandi Ortiz is a New York City-based photographer and art director with a focus on portraits, editorial, and commercial projects. They’ve been capturing the essence of the city and those who call it home since 2015 when they unceremoniously left a MFA program with no novel but holding on to the persistent urge to tell a story. Images are their medium of choice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="photo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-6 col-xs-6">
+                    <img class="img-responsive" src="images/image-asset2.jpeg" alt="Brandi Ortiz">
+                    <span>Jaya In studio</span>
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-6" style=" padding-left: 80px; ">
+                    <img class="img-responsive" src="images/image-asset3.jpeg" alt="Brandi Ortiz">
+                    <span>Reese In studio</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <img class="img-responsive" src="images/image-asset4.jpeg" alt="Brandi Ortiz">
+                    <span>Reese In studio</span>
+                </div>
+            </div>
+            <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+        </div>
+    </div>
+    
+    <div class="PHILOSOPHY">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p>PHILOSOPHY</p>
+                </div>
+                <div class="col-md-10"> 
+                   <p style="font-size: 25px; font-weight: 590;" class="gilda-display-regular">Brandi believes photos are metaphors, making the abstract concrete and mystifying the mundane. They believe photography is a conversation between the photographer, the subject, and those who will view these images for years to come. Brandi relishes in adding to the archive of humanity.</p>
+                </div>
+            </div>
+            <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+        </div>
+    </div>
+    
+    <div class="SERVICES">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p>SERVICES</p>
+                </div>
+                <div class="col-md-7 SERVICES-p"> 
+                   <p style="font-size: 20px;">Ready to tell your story? Browse available services, then book a free consultation. Let’s create together.</p>
+                   <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+                   <p>Portrait session</p>
+                   <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+                   <p>Corporate team photoshoot</p>
+                   <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+                   <p>Editorial art direction</p>
+                   <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+                   <p>Photo editing, color correction, retouching</p>
+                   <hr style=" border: none; color: #bbb; background-color: #1a2e1a; height: 1px; ">
+                </div>
+                <div class="col-md-3"> 
+                    <p style="padding: 25px; border: 1px solid; font-size: 15px; font-weight: 600;" class="text-center BOOK-ME">BOOK ME</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="READ MY STORY">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="images/image-asset5.jpeg" alt="">
+                </div>
+                <div class="col-md-6 text-center READ-MY-STORY-content"> 
+                    <p style="font-size: 45px; font-weight: 590; line-height: 53px; padding-top: 100px;" class="gilda-display-regular">“As a child, I’d pour over family photo albums, admiring the portraits. Now, I get to add to our collective albums, our collective memories.”</p>
+                    <p>Brandi Ortiz • Photographer & Art Director</p>
+                    <p style="padding: 25px; border: 1px solid; font-size: 15px; font-weight: 600;" class="text-center BOOK-ME">READ MY STORY</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+<!-- <div class="Marquee text-center" style="height: 500px; background: #cda1cd; display: flex; justify-content: center; align-items: center;">
+    <marquee style="font-size: 210px;" class="gilda-display-regular">Let's create together</marquee>
+</div> -->
+
+<div class="marquee-section">
+    <div class="text-center" style="height: 500px; background: #cda1cd; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
+        <div class="marquee-text gilda-display-regular">
+            Let's create together
+        </div>
+        <p style="padding: 25px; border: 1px solid; font-size: 15px; font-weight: 600; margin-top: 20px;" class="BOOK-ME">READ MY STORY</p>
+    </div>
+</div>
+
+<div class="footer" style="background-color: #1a2e1a; color: white;">
+    <div class="container">
+        
+        <div class="row" style=" border-top: 1px solid; border-bottom: 1px solid; padding: 50px 0px;">
+               
+                <div class="col-md-6">
+                    <p style=" font-size: 20px;">● Stay in the loop</p>
+                    <p style=" font-size: 17px; padding: 20px 0px; ">Sign up to receive email updates, availability, special promotions, and more. I respect your privacy and will never share your information with any third-party vendors.</p>
+                    <p>© 2022 BRANDI ORTIZ PHOTOGRAPHY</p>
+                </div>
+             </div>
+</div>
+<script>
+    // Language Toggle functionality
+    const languageToggleBtn = document.getElementById("language-toggle");
+    const mainTitle = document.getElementById("main-title");
+    const subtitle = document.getElementById("subtitle");
+
+    const translations = {
+        en: {
+            title: "BRANDI ORTIZ",
+            subtitle: "NYC PHOTOGRAPHER & ART DIRECTOR",
+        },
+        es: {
+            title: "BRANDI ORTIZ",
+            subtitle: "FOTÓGRAFA Y DIRECTORA DE ARTE EN NYC",
+        },
+        de: {
+            title: "BRANDI ORTIZ",
+            subtitle: "NYC FOTOGRAF & ART-DIREKTOR",
+        },
+    };
+
+    let currentLanguage = 'en';
+
+    // Toggle language
+    languageToggleBtn.addEventListener("click", () => {
+        if (currentLanguage === 'en') {
+            currentLanguage = 'es';
+            languageToggleBtn.textContent = 'EN';
+        } else if (currentLanguage === 'es') {
+            currentLanguage = 'de';
+            languageToggleBtn.textContent = 'ES';
+        } else {
+            currentLanguage = 'en';
+            languageToggleBtn.textContent = 'DE';
+        }
+        // Update text based on language
+        mainTitle.textContent = translations[currentLanguage].title;
+        subtitle.textContent = translations[currentLanguage].subtitle;
+    });
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',  // Original language of the page
+            includedLanguages: 'en,ja,es,de,zh-CN,ko', // Add Chinese and Korean here
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

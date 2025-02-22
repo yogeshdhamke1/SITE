@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap 4 CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery Tagcloud Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tagcloud/2.0.0/jquery.tagcloud.min.js"></script>
+
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+.tag-cloud {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tag-cloud li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.tag-cloud li a {
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    /* background-color: gray; */
+    background-color: brown;
+    height: 100%;
+    line-height: 24px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    /* text-shadow: 1px 1px #fff; */
+    font-size: 1.1em;
+
+}
+
+/* 
+.tag-cloud li a:hover {
+    background-color: #007bff;
+    color: white;
+} */
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- Bootstrap 4 Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Logo on the left -->
+            <a class="navbar-brand" href="#">
+                <img src="http://127.0.0.1:5500/SITE1-ortiz-fluid-demo.squarespace/images/default-favicon.ico" alt="Logo" class="d-inline-block align-top">
+            </a>
+
+            <!-- Heading on the right -->
+            <!-- <div class="ml-auto">
+                <h4 class="mb-0">Your Heading</h4>
+            </div> -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Move nav items to the right -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welome div -->
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <p style="font-size: 3.6em;">Welcome, create hand-crafted products</p>
+                <button>See Products</button>
+            </div>
+            <div class="col-lg-7">
+                <ul class="tag-cloud">
+                    <li><a href="#">Rolex</a></li>
+                    <li><a href="#">Omega</a></li>
+                    <li><a href="#">Patek Philippe</a></li>
+                    <li><a href="#">Tag Heuer</a></li>
+                    <li><a href="#">Audemars Piguet</a></li>
+                    <li><a href="#">Breitling</a></li>
+                    <li><a href="#">Seiko</a></li>
+                    <li><a href="#">Casio</a></li>
+                    <li><a href="#">Cartier</a></li>
+                    <li><a href="#">IWC Schaffhausen</a></li>
+                    <li><a href="#">Vacheron Constantin</a></li>
+                    <li><a href="#">Jaeger-LeCoultre</a></li>
+                    <li><a href="#">Breguet</a></li>
+                    <li><a href="#">Hublot</a></li>
+                    <li><a href="#">Panerai</a></li>
+                    <li><a href="#">Longines</a></li>
+                    <li><a href="#">Zenith</a></li>
+                    <li><a href="#">A. Lange & Söhne</a></li>
+                    <li><a href="#">Blancpain</a></li>
+                    <li><a href="#">Girard-Perregaux</a></li>
+                    <li><a href="#">Tissot</a></li>
+                    <li><a href="#">Movado</a></li>
+                    <li><a href="#">Fossil</a></li>
+                    <li><a href="#">Citizen</a></li>
+                    <li><a href="#">Hamilton</a></li>
+                    <li><a href="#">Michael Kors</a></li>
+                    <li><a href="#">Bulova</a></li>
+                    <li><a href="#">Sinn</a></li>
+                    <li><a href="#">Rado</a></li>
+                    <li><a href="#">Raymond Weil</a></li>
+                </ul>
+            </div>
+    
+    
+        </div>
+    </div>
+
+    <style>
+        /* html, body{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+          } */
+          
+          .g-container{
+            margin: auto;
+            perspective: 4px;
+            perspective-origin: 50% 50%;
+            position: relative;
+            animation: hueRotate 21s infinite linear;
+          }
+          
+          .g-group{
+            position: absolute;
+            width: 1000px;
+            height: 1000px;
+            left: -500px;
+            top: -500px;
+            transform-style: preserve-3d;
+            animation: move 12s infinite linear;
+          }
+          
+          .g-group:nth-child(2){
+            animation: move 12s infinite linear;
+            animation-delay: -6s;
+          }
+          
+          .item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          /*   background: url(https://cdn.pixabay.com/photo/2016/09/08/20/52/stars-1655504_1280.jpg);
+            */
+            background: url(https://z3.ax1x.com/2021/08/20/fLwuMd.jpg);
+            background-size: cover;
+            opacity: 1;
+            animation: fade 12s infinite linear;
+            animation-delay: 0;
+          }
+          
+          .g-group:nth-child(2) .item {
+            animation-delay: -6s;
+          }
+          
+          .item-right {
+            transform: rotateY(90deg) translateZ(500px);
+          }
+          
+          .item-left {
+            transform: rotateY(-90deg) translateZ(500px);
+          }
+          
+          .item-top {
+            transform: rotateX(90deg) translateZ(500px);
+          }
+          
+          .item-bottom {
+            transform: rotateX(-90deg) translateZ(500px);
+          }
+          
+          .item-middle {
+            transform: rotateX(180deg) translateZ(1000px);
+          }
+          
+          @keyframes move {
+            0%{
+              transform: translateZ(-500px) rotate(0deg);
+            }
+            100%{
+              transform: translateZ(500px) rotate(0deg);
+            }
+          }
+          
+          @keyframes fade {
+            0%{
+              opacity: 0;
+            }
+            25%,
+            60%{
+              opacity: 1;
+            }
+            100%{
+              opacity: 0;
+            }
+          }
+          
+          @keyframes hueRotate {
+            0% {
+              filter: hue-rotate(0);
+            }
+            100% {
+              filter: hue-rotate(360deg);
+            }
+          }
+    </style>
+    <div class="g-container">
+        <div class="g-group">
+          <div class="item item-right"></div>
+          <div class="item item-left"></div>
+          <div class="item item-top"></div>
+          <div class="item item-bottom"></div>
+          <div class="item item-middle"></div>
+        </div>
+        <div class="g-group">
+          <div class="item item-right"></div>
+          <div class="item item-left"></div>
+          <div class="item item-top"></div>
+          <div class="item item-bottom"></div>
+          <div class="item item-middle"></div>
+        </div>
+      </div>
+
+    
+
+
+
+
+    <!-- Your content here -->
+
+    <!-- Bootstrap 4 JS and Popper.js CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

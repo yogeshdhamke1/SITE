@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+
+    <style>
+        body{
+            margin: 50px;
+        }
+        .card-div{
+            display: flex;
+            width: 800px;
+            margin: auto;;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            box-shadow:20px 20px 50px 10px skyblue inset;
+            padding: 0px 20px;
+            border: 0.8px solid skyblue;
+
+        }
+        .card-div img{
+            height: 80%;
+        }
+        .card-content{
+            margin-left: 9px;
+        }
+        @media (max-width:992px){
+            .card-div{
+                display: block;
+                height: auto;
+                text-align: center;
+                padding: 20px;
+                width: auto;
+            }
+            .card-div img{
+            height: 200px
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-div">
+        <img src="https://origin-blog.mediatemple.net/wp-content/uploads/2016/01/me3-400x400.jpg" alt="demo-card-img">
+        <div class="card-content">
+            <h2>About the Author</h2>
+            <p>Chris is a web designer and developer. He writes about all things web at CSS-Tricks, talks about all things web at conferences around the world and on his podcast ShopTalk, and co-founded the web coding playground CodePen.</p>
+            <a href="#" target="_blank">More by this Author</a>
+        </div>
+    </div>
+
+    <style>
+        .bg-image-div {
+            max-width: 100%;
+            position: relative;
+            top: 10px;
+            width: 100%; 
+        }
+        .bg-image-div img {
+            width: 100%; 
+            height: auto; 
+        }
+        .divider {
+            width: 5px;
+            position: absolute;
+            top: 0px;
+            height: 100%;
+            background: white
+        }
+        .one {
+            left: 10%;
+        }
+        .two {
+            left: 20%;
+        }
+        .three {
+            left: 30%;
+        }
+        .four {
+            left: 40%;
+        }
+        .five {
+            left: 50%;
+        }
+        .six {
+            left: 60%;
+        }
+        .seven {
+            left: 70%;
+        }
+        .eight {
+            left: 80%;
+        }
+        .nine {
+            left: 90%;
+        }
+        /* .ten {
+            left: 100%;
+        } */
+    </style>
+    
+    <div class="bg-image-div">
+        <img src="https://static.wixstatic.com/media/b2c0a7_a44d01e99b665e19effb29e4fc36ded3.jpg/v1/fill/w_880,h_500,al_c,q_85/b2c0a7_a44d01e99b665e19effb29e4fc36ded3.jpg" alt="image">
+        <div class="divider one"></div>
+        <div class="divider two"></div>
+        <div class="divider three"></div>
+        <div class="divider four"></div>
+        <div class="divider five"></div>
+        <div class="divider six"></div>
+        <div class="divider seven"></div>
+        <div class="divider eight"></div>
+        <div class="divider nine"></div>
+        <div class="divider ten"></div>
+    </div>
+    
+    
+</body>
+</html>

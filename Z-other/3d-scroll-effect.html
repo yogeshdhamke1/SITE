@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Scroll Text</title>
+  <style>
+    body, html { margin: 0; height: 100%; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+  <script>
+    // Scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Lighting (essential for visibility)
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xffffff, 1);
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
+
+    // Font loader
+    const loader = new THREE.FontLoader();
+    loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', 
+      (font) => {
+        const material = new THREE.MeshPhongMaterial({ 
+          color: 0x00ff00,
+          shininess: 100
+        });
+
+        const createText = (text, zPos) => {
+          const geometry = new THREE.TextGeometry(text, {
+            font: font,
+            size: 2,
+            height: 0.5,
+            curveSegments: 12,
+            bevelEnabled: false
+          });
+          
+          // Center the text geometry
+          geometry.center();
+          
+          const mesh = new THREE.Mesh(geometry, material);
+          mesh.position.z = zPos;
+          scene.add(mesh);
+        };
+
+        // Create text elements
+        createText("Welcome", -30);
+        createText("to 3D Space", -20);
+        createText("Scroll to Move", -10);
+        createText("Through Text", 0);
+        createText("Enjoy!", 10);
+
+        // Initial camera position
+        camera.position.z = 25;
+        camera.position.y = 5;
+
+        // Mouse scroll control (Zoom in/out, moving the camera through the text)
+        let targetZ = camera.position.z;
+
+        window.addEventListener('wheel', (e) => {
+          targetZ += e.deltaY * 0.05; // Adjust scroll speed
+          targetZ = THREE.MathUtils.clamp(targetZ, -40, 40); // Clamp the target Z position
+        });
+
+        // Animation loop
+        function animate() {
+          requestAnimationFrame(animate);
+          
+          // Smooth camera movement towards the target position
+          camera.position.z += (targetZ - camera.position.z) * 0.1;
+
+          // No rotation; just move camera through the text
+          camera.lookAt(0, 0, 0);
+
+          renderer.render(scene, camera);
+        }
+        animate();
+      },
+      // Progress callback
+      (xhr) => console.log((xhr.loaded / xhr.total * 100) + '% loaded'),
+      // Error callback
+      (err) => console.error('Error loading font:', err)
+    );
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
